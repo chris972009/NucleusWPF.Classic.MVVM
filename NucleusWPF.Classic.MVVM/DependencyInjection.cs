@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,7 +12,8 @@ namespace NucleusWPF.Classic.MVVM
     {
         private DependencyInjection()
         {
-
+            _interfacesMap[typeof(IMessageService)] = typeof(MessageService);
+            _singletonsMap[typeof(IWindowService)] = WindowService.Instance;
         }
 
         private static DependencyInjection _instance;
@@ -21,15 +23,18 @@ namespace NucleusWPF.Classic.MVVM
         public static DependencyInjection Instance =>
             _instance ?? (_instance = new DependencyInjection());
 
-        private readonly Dictionary<Type, Type> _interfacesMap = new Dictionary<Type, Type>()
-        {
-            { typeof(IMessageService), typeof(MessageService) },
-        };
+        private readonly ConcurrentDictionary<Type, Type> _interfacesMap = new ConcurrentDictionary<Type, Type>();
+        private readonly ConcurrentDictionary<Type, object> _singletonsMap = new ConcurrentDictionary<Type, object>();
 
-        private readonly Dictionary<Type, object> _singletonsMap = new Dictionary<Type, object>()
-        {
-            { typeof(IWindowService), WindowService.Instance },
-        };
+        //private readonly Dictionary<Type, Type> _interfacesMap = new Dictionary<Type, Type>()
+        //{
+        //    { typeof(IMessageService), typeof(MessageService) },
+        //};
+
+        //private readonly Dictionary<Type, object> _singletonsMap = new Dictionary<Type, object>()
+        //{
+        //    { typeof(IWindowService), WindowService.Instance },
+        //};
 
         /// <summary>
         /// Register an interface to its implementation type.
