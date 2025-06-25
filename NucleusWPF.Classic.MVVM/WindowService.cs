@@ -82,18 +82,21 @@ namespace NucleusWPF.Classic.MVVM
                 return InitializeWindow(viewModelType, windowType);
 
             //check that ViewModel meets naming convention
-            var viewModelName = viewModelType.Name;
+            var viewModelName = viewModelType.FullName;
             if (!viewModelName.EndsWith(_viewModelSuffix, StringComparison.Ordinal))
                 throw new ArgumentException($"'{viewModel}' must end with '{_viewModelSuffix}'");
 
             //resolve view type by convention
             var viewSuffix = suffix ?? defaultViewSuffix;
 
-            var viewName = viewModelName.Substring(0, _viewModelSuffix.Length) + viewSuffix;
-            viewName = viewName.Replace(".ViewModels.", ".Views.");
-            var viewType = Type.GetType(viewName);
+			//replace ViewModel naming convention with View naming convention
+			//ex; "MyApp.ViewModels.MyViewModel" becomes "MyApp.Views.MyViewWindow"
+			var viewName = viewModelName.Replace(".ViewModels.", ".Views.");
+            viewName = viewName.Substring(0, viewName.Length - _viewModelSuffix.Length) + viewSuffix;
+            var viewType = viewModelType.Assembly.GetType(viewName);
+
             _ = viewType ?? throw new InvalidOperationException($"Could not find a view for '{viewModel}'");
-            return InitializeWindow(viewModel, viewType);
+			return InitializeWindow(viewModel, viewType);
         }
     }
 }
