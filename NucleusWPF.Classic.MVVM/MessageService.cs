@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace NucleusWPF.MVVM
+namespace NucleusWPF.Classic.MVVM
 {
     /// <summary>
     /// Provides methods for displaying messages and exceptions to the user using WPF message boxes.

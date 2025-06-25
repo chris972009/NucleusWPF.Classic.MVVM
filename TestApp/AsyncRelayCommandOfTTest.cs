@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestPlatform.ObjectModel;
-using NucleusWPF.MVVM;
+using NucleusWPF.Classic.MVVM;
 using System;
 using System.Collections.Generic;
 using System.Linq;

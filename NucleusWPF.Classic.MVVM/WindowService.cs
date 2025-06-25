@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 
-namespace NucleusWPF.MVVM
+namespace NucleusWPF.Classic.MVVM
 {
     /// <summary>
     /// Provides functionality for creating and displaying WPF windows associated with view models.

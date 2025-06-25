@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NucleusWPF.MVVM
+namespace NucleusWPF.Classic.MVVM
 {
     /// <summary>
     /// Provides a dependency injection container for transient and singleton servies and models.

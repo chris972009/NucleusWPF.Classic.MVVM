@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace NucleusWPF.MVVM
+namespace NucleusWPF.Classic.MVVM
 {
     /// <summary>
     /// Implementation of INotifyPropertyChanged.

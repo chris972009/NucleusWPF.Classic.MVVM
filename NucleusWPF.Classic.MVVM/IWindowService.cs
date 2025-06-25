@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace NucleusWPF.MVVM
+namespace NucleusWPF.Classic.MVVM
 {
     /// <summary>
     /// Provides functionality for creating new windows.

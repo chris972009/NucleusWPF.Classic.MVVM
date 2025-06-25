@@ -1,4 +1,4 @@
-﻿using NucleusWPF.MVVM;
+﻿using NucleusWPF.Classic.MVVM;
 
 namespace TestApp
 {

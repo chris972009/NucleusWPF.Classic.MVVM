@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace NucleusWPF.MVVM
+namespace NucleusWPF.Classic.MVVM
 {
     /// <summary>
     /// Defines methods for displaying messages to the user.

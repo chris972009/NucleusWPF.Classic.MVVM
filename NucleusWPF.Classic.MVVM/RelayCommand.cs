@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NucleusWPF.MVVM
+namespace NucleusWPF.Classic.MVVM
 {
     /// <summary>
     /// Implementation of <see cref="IRelayCommand"/> that supports synchronous execution.

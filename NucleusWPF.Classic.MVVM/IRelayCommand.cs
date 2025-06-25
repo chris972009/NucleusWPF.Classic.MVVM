@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace NucleusWPF.MVVM
+namespace NucleusWPF.Classic.MVVM
 {
     /// <summary>
     /// Represents a command that can be executed and provides a mechanism to notify changes in its ability to execute.
