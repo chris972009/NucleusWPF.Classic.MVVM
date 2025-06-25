@@ -83,7 +83,7 @@ namespace NucleusWPF.Classic.MVVM
         /// <param name="validate">An action to validate the new value. The action receives the new value and the property name as parameters.</param>
         /// <param name="propertyName">The name of the property being updated. This is automatically supplied by the caller if not explicitly
         /// provided.</param>
-        protected void RaseAndValidateIfChanged<T>(ref T targetProperty, T value, Action<T, string> validate, [CallerMemberName] string propertyName = null)
+        protected void RaiseAndValidateIfChanged<T>(ref T targetProperty, T value, Action<T, string> validate, [CallerMemberName] string propertyName = null)
         {
             if (!Equals(targetProperty, value))
             {
