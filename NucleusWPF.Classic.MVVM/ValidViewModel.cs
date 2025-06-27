@@ -49,7 +49,7 @@ namespace NucleusWPF.Classic.MVVM
         protected void AddError(string error, [CallerMemberName] string propertyName = null)
         {
             if (propertyName == null) return;
-            if (_errors.ContainsKey(propertyName)) _errors[propertyName] = new List<string>();
+            if (!_errors.ContainsKey(propertyName)) _errors[propertyName] = new List<string>();
             if (!_errors[propertyName].Contains(error))
             {
                 _errors[propertyName].Add(error);
